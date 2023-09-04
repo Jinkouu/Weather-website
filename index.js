@@ -5,6 +5,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchBox = document.querySelector(".search input")
 const searchBtn = document.querySelector(".search button")
 const weatherIcon = document.querySelector(".weather-icon")
+
 async function checkWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     if(response.status == 404){
@@ -20,8 +21,10 @@ async function checkWeather(city){
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
         //this gets the corresponding image from the images folder
         weatherIcon.src = "images/" + data.weather[0].icon + ".png";
+        
         //changes the css upon the weather being entered in into block
         document.querySelector(".row").style.display = "block"
         document.querySelector(".error").style.display = "none";

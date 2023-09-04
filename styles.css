@@ -15,10 +15,11 @@ div{
 /* Nav bar */
 
 nav {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: auto;
     background-color:#3e5c76;
     list-style: none;
     box-shadow:lightgray 0 1px;
@@ -51,6 +52,47 @@ nav > ul > li:hover{
     cursor: pointer;
     background-color:#7fa1be;
 }
+
+/* Drop down settings */
+
+nav > .additional{
+    margin-right: 20px;
+    width: 225.39px; 
+    text-align: right;
+    
+}
+
+nav > .additional > .dropdown > img{
+    width: 35px;
+    height: 35px;
+    margin-right: 0px;
+    cursor: pointer;
+}
+
+.dropdown-settings{
+    display: none;
+    position: absolute;
+    background-color: #537796;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-settings a{
+    display: block;
+    text-decoration: none;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-settings{
+    display: block;
+}
+.dropdown{
+    width: 35px;
+}
+
 
 /* content */
 
